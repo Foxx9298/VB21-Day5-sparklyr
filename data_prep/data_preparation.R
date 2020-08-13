@@ -23,6 +23,7 @@ data_covid_latest <- data_covid %>% group_by(fips) %>%
   arrange(desc(date)) %>% slice(1)
 
 data_merged <- 
+  data_covid %>%
   inner_join(data_pres %>% select(!c(county, st, cand)), by = "fips") %>%
   inner_join(data_demo %>% select(!c(State, County)) %>%
                select(!ends_with("Err")), by = "fips") %>%

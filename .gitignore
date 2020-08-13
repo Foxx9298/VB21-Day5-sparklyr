@@ -39,3 +39,6 @@ vignettes/*.pdf
 .Renviron
 
 *-anskey.*
+
+derby.log
+logs/*
